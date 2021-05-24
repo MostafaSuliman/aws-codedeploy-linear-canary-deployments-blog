@@ -2,6 +2,7 @@
   "containerDefinitions": [
     {
       "name": "ecs-blog-svc",
-      "image": "<IMAGE1_NAME>",
-                       ]
+      "image": "<IMAGE1_NAME>"
+    }
+    ]
 }
