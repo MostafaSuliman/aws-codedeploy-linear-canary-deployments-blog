@@ -1,78 +1,24 @@
 {
-    "ipcMode": null,
     "executionRoleArn": "arn:aws:iam::624792314775:role/ecs-blog-ECSTaskExecutionRole-125BCQ89GQM9H",
     "containerDefinitions": [
         {
-            "dnsSearchDomains": [],
-            "environmentFiles": null,
-            "logConfiguration": {
-                "logDriver": "awslogs",
-                "secretOptions": null,
-                "options": {
-                    "awslogs-group": "ecs-blog-loggroup-svc",
-                    "awslogs-region": "ca-central-1",
-                    "awslogs-stream-prefix": "ecs-blog-svc"
-                }
-            },
-            "entryPoint": [],
+            "name": "ecs-blog-svc",
+            "image": "<IMAGE1_NAME>",
+            "essential": true,
             "portMappings": [
                 {
                     "hostPort": 80,
                     "protocol": "tcp",
                     "containerPort": 80
                 }
-            ],
-            "command": [],
-            "linuxParameters": null,
-            "cpu": 256,
-            "environment": [],
-            "resourceRequirements": null,
-            "ulimits": null,
-            "dnsServers": [],
-            "mountPoints": [],
-            "workingDirectory": null,
-            "secrets": null,
-            "dockerSecurityOptions": [],
-            "memory": 512,
-            "memoryReservation": null,
-            "volumesFrom": [],
-            "stopTimeout": null,
-            "image": "<IMAGE1_NAME>",
-            "startTimeout": null,
-            "firelensConfiguration": null,
-            "dependsOn": null,
-            "disableNetworking": null,
-            "interactive": null,
-            "healthCheck": null,
-            "essential": true,
-            "links": [],
-            "hostname": null,
-            "extraHosts": null,
-            "pseudoTerminal": null,
-            "user": null,
-            "readonlyRootFilesystem": null,
-            "dockerLabels": null,
-            "systemControls": [],
-            "privileged": null,
-            "name": "ecs-blog-svc"
+            ]
         }
     ],
-    "memory": "512",
-    "taskRoleArn": null,
-    "family": "ecs-blog-svc",
-    "pidMode": null,
     "requiresCompatibilities": [
         "FARGATE"
     ],
     "networkMode": "awsvpc",
     "cpu": "256",
-    "inferenceAccelerators": null,
-    "proxyConfiguration": null,
-    "volumes": [],
-    "tags": [
-        {
-            "key": "Name",
-            "value": "ecs"
-        }
-    ]
+    "memory": "512",
+    "family": "ecs-blog-svc"
 }
