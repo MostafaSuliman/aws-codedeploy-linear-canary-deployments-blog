@@ -20,14 +20,7 @@ phases:
       - printf '[{"name":"%s","imageUri":"%s"}]' "$SERVICE_NAME" "$IMAGE_URI" > imageDetail.json
 artifacts:
   files: 
-    - 'image*.json'
+    - 'imageDetail.json'
     - 'AppSpec.yml'
     - 'taskdef.json'
-  secondary-artifacts:
-    DefinitionArtifact:
-      files:
-        - AppSpec.yml
-        - taskdef.json
-    ImageArtifact:
-      files:
-        - imageDetail.json
+
