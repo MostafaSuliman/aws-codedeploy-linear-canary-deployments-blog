@@ -69,5 +69,10 @@
     "inferenceAccelerators": null,
     "proxyConfiguration": null,
     "volumes": [],
-    "tags": []
+    "tags": [
+        {
+            "key": "Name",
+            "value": "ecs"
+        }
+    ]
 }
