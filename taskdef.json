@@ -1,7 +1,7 @@
 {
   "containerDefinitions": [
     {
-      "name": "ronantest1",
+      "name": "ecs-blog-svc",
       "image": "<IMAGE1_NAME>",
                        ]
 }
