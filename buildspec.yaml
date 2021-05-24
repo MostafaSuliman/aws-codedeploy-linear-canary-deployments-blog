@@ -17,6 +17,8 @@ phases:
       - $(aws ecr get-login --no-include-email --region     $AWS_DEFAULT_REGION)
       - echo Build stage successfully completed on `date`
       - bash cicd.sh
+      - cat taskdef.json
+      - echo $NEW_TASK_INFO
       - docker push $IMAGE_URI
       - echo pushed "$IMAGE_URI"
       - printf '{"ImageURI":"%s"}'  $IMAGE_URI > imageDetail.json
