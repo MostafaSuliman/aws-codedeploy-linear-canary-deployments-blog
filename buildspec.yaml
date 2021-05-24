@@ -13,6 +13,7 @@ phases:
   post_build:
     commands:
       - bash -c "if [ /"$CODEBUILD_BUILD_SUCCEEDING/" == /"0/" ]; then exit 1; fi"
+      - - $(aws ecr get-login --no-include-email --region     $AWS_DEFAULT_REGION)
       - echo Build stage successfully completed on `date`
       - docker push $IMAGE_URI
       - echo pushed "$IMAGE_URI"
