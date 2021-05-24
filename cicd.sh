@@ -22,8 +22,8 @@ fi
 TASK_DEFINITION=$(aws ecs describe-task-definition --task-definition "$TASK_FAMILY")
 NEW_TASK_DEFINTIION=$(echo "$TASK_DEFINITION" | jq --arg IMAGE "$ECR_IMAGE_TAG" '.taskDefinition | .containerDefinitions[0].image = $IMAGE | del(.taskDefinitionArn) | del(.revision) | del(.status) | del(.requiresAttributes) | del(.compatibilities)')
 #NEW_TASK_INFO=$(aws ecs register-task-definition --region "$Regions" --cli-input-json "$NEW_TASK_DEFINTIION")
-echo $NEW_TASK_INFO > taskdef.json
+echo $NEW_TASK_DEFINTIION > taskdef.json
 #NEW_REVISION=$(echo "$NEW_TASK_INFO" | jq '.taskDefinition.revision')
-echo $NEW_TASK_INFO
+echo $NEW_TASK_DEFINTIION
 # return new task revision
 #echo "${TASK_FAMILY}:${NEW_REVISION}"
